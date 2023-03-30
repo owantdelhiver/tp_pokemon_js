@@ -7,12 +7,11 @@ function pokeSwap() {
     pokemons[1] = temp;
 }
 function combat(pokemons) {
-    while(true) {
+    while(!pokemons[0].isDead()) {
         console.log(`${pokemons[0].name} a ${pokemons[0].hp} points de vie.`)
         pokemons[0].attaque(pokemons[1]);
         if(pokemons[1].isDead()) {
             console.log(`${pokemons[0].name} a gagné le combat. Il lui restait ${pokemons[0].hp} hp`);
-            break;
         }
 
         pokeSwap();
